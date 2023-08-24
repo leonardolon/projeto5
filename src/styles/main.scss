@@ -1,5 +1,73 @@
-$bgcolor: red;
+@use "variaveis";
+@use '_hero';
+@use "_shows";
+@use "_plans";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+
 
 body {
-    background-color: $bgcolor;
+    background-color: variaveis.$cordeFundo;
+}
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variaveis.$cortextoPrincipal;
+}
+
+@mixin title ($fontSize: 28px){
+    @include text($fontSize);
+    color: variaveis.$cortextoSecundario;
+}
+
+.text--big {
+    @include text(18px);
+}
+
+.text {
+    @include text;
+}
+
+.text--small {
+    @include text(12px);
+}
+
+.title--big{
+    @include title(44px);
+}
+
+.title{
+    @include title(40px);
+}
+
+.title--small{
+    @include title(28px);
+}
+
+.link-text {
+    @include text(18px);
+    color: variaveis.$cortextoSecundario;
+    text-decoration: underline;
+}
+
+.button {
+    
+        display: block;
+        width: 100%;
+        height: 60px;
+        font-size: 18px;
+        color: variaveis.$cortextoSecundario;
+        background-color: #6421ff;
+        text-transform: uppercase;
+        border-radius: 4px;
+        margin-top: 2vw;
+        margin-bottom: 8px;
+    
 }
